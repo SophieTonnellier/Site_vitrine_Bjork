@@ -142,6 +142,38 @@ nav .content .menulist{
     top: 31%;
     left: 34%;
 }
+.gallery{
+    display: grid;
+    grid-template-columns: repeat(6, 15vw);
+    grid-template-rows: repeat(3, 15vh);
+    /* grid-template-columns: 45vw 30vw 15vw;*/
+    grid-template-areas:
+    "custom_made_1 custom_made_1 custom_made_1 custom_made_2 custom_made_2 custom_made_3"
+    "custom_made_1 custom_made_1 custom_made_1 custom_made_4 custom_made_5 custom_made_5"
+    "custom_made_6 custom_made_6 custom_made_6 custom_made_6 custom_made_6 custom_made_6";
+    grid-gap: 2vh;
+    gap: 2vh;
+}
+.custom_made_1{
+    grid-area: custom_made_1;
+}
+.custom_made_2{
+    grid-area: custom_made_2;
+}
+.custom_made_3{
+    grid-area: custom_made_3;
+}
+.custom_made_4{
+    grid-area: custom_made_4;
+}
+.custom_made_5{
+    grid-area: custom_made_5;
+}
+.custom_made_6{
+    grid-area: custom_made_6;
+}
+
+
 /* Responsive code */
 /* Permet de ne pas couper le menu de navigation lors du responsive */
 @media screen and (max-width: 1275px){
