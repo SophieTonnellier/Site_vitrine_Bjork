@@ -1,0 +1,196 @@
+/* Polices */
+/* Police pour textes */
+@font-face {
+    font-family: 'folksregular';
+    src: url('folks-normal-webfont.woff2') format('woff2'),
+         url('folks-normal-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Polices pour titres, éléments importants etc */
+@font-face {
+    font-family: 'ffbold';
+    src: url('fonts/Fashion-Fetish-Bold.woff') format('woff'),
+         url('fonts/Fashion-Fetish-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Police pour liens dans la page */
+@font-face {
+    font-family: 'ffitalic';
+    src: url('fonts/Fashion-Fetish-Italic.woff') format('woff'),
+         url('fonts/Fashion-Fetish-Italic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Police pour logo */
+@font-face {
+    font-family: 'Kerox';
+    src: url('fonts/Kerox-NonCommercial.woff') format('woff'),
+         url('fonts/Kerox-NonCommercial.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'ffbold','folksregular';
+}
+.navbar {
+    background-color: #CB9263;
+/* Pour qu'elle se potionne en haut de l'ecran */
+    position: fixed;
+/* Pour qu'elle se positionne sur tout l'ecran */
+    width: 100%;
+}
+.navbar nav{
+    position: relative;
+    display: flex;
+    margin: 0 auto;
+/* Aligne le logo sur le coté et au centre*/
+    padding-left: 3vw;
+    align-items: center;
+    justify-content: space-between;
+}
+/* Mise en forme de la barre de navigation */
+nav .content{
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    height: 80px;
+}
+/* Mise en forme du logo */
+.logo a{
+    font-family: 'Kerox';
+    font-size: 50px;
+    font-weight: 600;
+    color: #F4F2ED;
+}
+nav .content .menulist{
+/* Permet de mettre sur la même ligne les titres du menu */
+    display: flex;
+}
+/* Retire les puces sur les listes */
+.content .menulist li{
+    list-style: none;
+}
+/* Mise en forme des titres du menu */
+.content .menulist li a{
+/* Permet de justifier les titres à droite lors de l'ouverture du menu burger */
+    float: right;
+    font-size: 15px;
+/* Permet d'ajouter de l'espace entre les titres du menu */
+    padding: 0 4vw;
+/* Couleur des titres et ombre portée */
+    color: #F9F9F9; text-shadow: black 0.1em 0.1em 0.2em;
+/* Transition de l'ajout de la couleur à la page active */
+    transition: color 0.3s ease-out;
+}
+.content .menulist li:hover a{
+/* Ajoute de la couleur à la page active */
+    color: #4D2C37
+}
+.navbar .menu-icon {
+    color: #F9F9F9;
+    font-size: 20px;
+    cursor: pointer;
+/* Permet de centrer le menu burger */
+    text-align: center;
+}
+.navbar .menu-icon {
+/* Permet de retirer le menu burger du menu de navigation */
+    display: none;
+}
+.navbar input[type="checkbox"]{
+/* Permet de retirer visuellement la case à cocher  */
+    display: none;
+}
+/*Image de fond header*/
+.hero-image {
+/* Linear gradient permet de mettre une opacité reduite sur l'image pour mieux voir le texte */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(../assets/img/header.jpg);
+    min-height: 100vh;
+/*Position de l'image*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.hero-text h1 {
+    display: flex;
+    position: absolute;
+    font-size: 40px;
+    top: 20%;
+    left: 10%;
+    color: white;
+}
+.hero-text h2 {
+    display: flex;
+    position: absolute;
+    font-size: 30px;
+    top: 30%;
+    left: 10%;
+    color: white;
+}
+.hero-text .frflag {
+    display: flex;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    top: 31%;
+    left: 34%;
+}
+/* Responsive code */
+/* Permet de ne pas couper le menu de navigation lors du responsive */
+@media screen and (max-width: 1275px){
+    .navbar nav{
+/* Permet d'ajouter de l'espace entre les titres du menu */
+    padding: 0 20px;
+    }
+nav .content .menulist{
+/* Permet de bien positionner le déroulant du menu burger */
+    margin-left: -175px;
+}
+.content .menulist li a{
+/* Permet d'ajouter de l'espace entre les titres du menu */
+    padding: 8px 2em;
+}
+    }
+@media screen and (max-width: 900px){
+.navbar .menu-icon {
+    display: block;
+	position: fixed;
+/* Permet d'ouvrir et de fermer le menu */
+	right: 0%;
+/* Permet de décaler le menu sur la droite */
+	width: 5em;
+}
+.content .menulist li a{
+/* Permet d'ajouter de l'espace entre les titres du menu */
+    padding: 8px 12px;
+/* Ajoute de la marge pour le décoler du bord droit de l'écran */
+    margin-right: 5px;
+  }
+nav .content .menulist{
+    display: block;
+    position: fixed;
+    background-color: #CB9263;
+/* Permet de terminer la longueur du menu déroulant du burger et sa largeur */
+    width: 100%;
+    height: 100%;
+/* Le positionne correctement */
+    top:80px;
+    max-width: 200px;
+}
+nav #show-menu:checked ~ .content .menulist {
+/* Permet de d'ouvrir et fermer le menu */
+    right: -100% 
+}
+.content .menulist li a {
+/* Mise en forme des titres dans le menu burger */
+    line-height: 50px;
+    font-size: 18px;
+}
+    }
